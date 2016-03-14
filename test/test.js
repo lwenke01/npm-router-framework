@@ -7,22 +7,38 @@ chai.use(chaiHTTP);
 var request = chai.request;
 var expect = chai.expect;
 require(__dirname + '/../server');
-var fs = require('fs');
 
-describe('testing new router', (), => {
+
+describe('testing new router', () => {
   it('POST should set with /animals/ with new animal type', (done)=>{
     request('localhost:3000')
     .post('/animals')
-    .send({'animal': 'type'})
-    .end((error, response) =>{
-      expect(error).to.eql(null);
-      expect(response).to.have.status(200);
-      expect(response).to.eql('animal type');
+    .send({message: 'hey'})
+    .end((err, res) =>{
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
       done();
     });
   });
-  it('GET should receive the type of animal in /animal/type', (done)=>{
+  it('GET should receive the /animal', (done)=>{
     request('localhost:3000')
-    .get('')
-  })
+    .get('/animals')
+    .end(function(err, res) {
+      expect(err).to.eql(null);
+      expect(res).to.be.status(200);
+      console.log(res.text);
+      expect(res.text).to.eql('1.json');
+      done();
+
+    });
+  });
+  it('DELETE router should delete the /animals', (done)=>{
+    request('localhost:3000')
+    .delete('/animals')
+    .end((err, res) =>{
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      done();
+    });
+  });
 });
