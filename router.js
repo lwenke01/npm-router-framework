@@ -1,5 +1,4 @@
 'use strict';
-// var url = require('url');
 var Router = module.exports = function() {
   this.routes = {
     'GET': {},
