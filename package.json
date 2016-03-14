@@ -1,6 +1,6 @@
 {
   "name": "npm-router-framework",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "created a framework for open source npm package",
   "main": "server.js",
   "directories": {
