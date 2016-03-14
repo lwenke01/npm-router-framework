@@ -45,22 +45,7 @@ Animals.get('/animals', (req, res)=>{
     res.end();
   });
 });
-// get animal by id
-// Animals.get('/animals/', (req, res)=> {
-//   console.log('hit with a GET request for /animals/animalType');
-//   fs.readdir(__dirname + '/data/', function(err, data) {
-//
-//     })
-//     var stringData = data.toString();
-//     console.log('data: ' + stringData);
-//     if(err){
-//       res.writeHead(404, {'Content-Type': 'application/json'});
-//       return res.end('404 Not Found');
-//     }
-//     res.writeHead(200, {'Content-Type': 'application/json'});
-//     res.end(stringData);
-//   });
-// }
+
 
 Animals.delete('/animals', (req, res)=>{
   console.log('/delete got hit');

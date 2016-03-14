@@ -2,7 +2,7 @@
   "name": "npm-router-framework",
   "version": "1.0.0",
   "description": "created a framework for open source npm package",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
